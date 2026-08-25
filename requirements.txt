@@ -1,0 +1,13 @@
+torch>=2.0
+torchvision
+torcheval
+numpy<2.0
+scipy
+scikit-learn
+matplotlib
+tqdm
+medmnist
+escnn
+nibabel
+h5py
+datasets
