@@ -618,9 +618,9 @@ class MatrixMomentV2(tnn.Module):
 
 
 class MatrixMomentOriginal(tnn.Module):
-    """Exact reproduction of Net from NeurIPS 2025 supplementary notebook.
+    """Reference moment-kernel architecture (the main model of the paper).
 
-    Matches notebook: ch0=4, 3 downsamples (after c1/c2/c3), last layer scalar only,
+    Configuration: ch0=4, 3 downsamples (after c1/c2/c3), last layer scalar only,
     no BN/sigmoid on last layer, padding_mode='reflect', subtract_one=False.
 
     Use with: lr=1e-3, batch_size=64, epochs=1000, --no_normalize.
@@ -822,9 +822,9 @@ class TrivialIrrepMomentOriginal(tnn.Module):
 
 
 class VanillaCNNOriginal(tnn.Module):
-    """Exact reproduction of Net0 (standard baseline) from NeurIPS 2025 supplementary notebook.
+    """Standard-CNN baseline matching the reference architecture.
 
-    Matches notebook: ch0=12, stride-2 Conv2d for downsampling, ReLU, standard BatchNorm2d.
+    Configuration: ch0=12, stride-2 Conv2d for downsampling, ReLU, standard BatchNorm2d.
     Use with: lr=1e-3, batch_size=64, epochs=1000, --no_normalize.
     """
     def __init__(self, img_channels: int, n0: int, num_classes: int, kernel_size=3, padding=1, num_layers: int = 8):

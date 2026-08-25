@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
 Training script for 3D MRI affine registration.
-Extracted from momentkernels_neurips2025_experiment_2_mri_{standard,equivariant}.ipynb
 
 Usage:
     python mri_train.py --model standard   --data_dir /path/to/adni --epochs 200 --run 1

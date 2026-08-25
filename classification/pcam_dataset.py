@@ -38,13 +38,12 @@ Requirements
 
 Download note
 -------------
-Google Drive is slow or blocked from some networks. AutoDL's
-`/etc/network_turbo` accelerates GitHub/HuggingFace but NOT Google Drive, so if
-the download stalls, fetch from HuggingFace (`1aurent/PatchCamelyon`) instead
-and point `root` at the extracted files.
+Google Drive is slow or blocked from some networks; if the download stalls,
+fetch from HuggingFace (`1aurent/PatchCamelyon`) instead and point `root` at
+the extracted files.
 
-Disk: the full dataset is ~8 GB. On AutoDL pass an explicit
-`root='/root/autodl-tmp/.pcam'` to keep it off the small system disk.
+Disk: the full dataset is ~8 GB; set `PCAM_ROOT` to keep it off a small
+system disk.
 """
 import os
 import torch
@@ -58,9 +57,9 @@ PCAM_INFO = {
     'n_samples': {'train': 262144, 'val': 32768, 'test': 32768},
 }
 
-# Where PCam lives. Override with PCAM_ROOT -- important on AutoDL, where the
+# Where PCam lives. Override with PCAM_ROOT -- useful on machines where the
 # default lands on the small system disk instead of the data disk, e.g.
-#   export PCAM_ROOT=/root/autodl-tmp/.pcam
+#   export PCAM_ROOT=/path/to/pcam_cache
 DEFAULT_ROOT = os.environ.get('PCAM_ROOT', os.path.expanduser('~/.pcam'))
 
 

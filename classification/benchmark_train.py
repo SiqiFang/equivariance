@@ -416,7 +416,7 @@ if __name__ == "__main__":
                         help="Floor for the LR schedule, so repeated halvings cannot collapse the LR to zero")
     parser.add_argument("--resume", type=str, default=None, help="Path to resume checkpoint (.pt file saved at end of a previous run)")
     parser.add_argument("--plot_interval", type=int, default=100, help="Save intermediate plot and resume checkpoint every N epochs")
-    parser.add_argument("--no_normalize", action="store_true", default=False, help="Skip input normalization (use raw [0,1] tensor — matches original notebook)")
+    parser.add_argument("--no_normalize", action="store_true", default=False, help="Skip input normalization (use raw [0,1] tensor — required for *Original models)")
     parser.add_argument("--seed", type=int, default=0, help="RNG seed for torch/numpy/random. seed=0 keeps the legacy run directory; nonzero seeds use run{N}_seed{S}.")
     parser.add_argument("--resize", type=int, default=None, help="If set, resize images to (resize, resize) before training. Required for exact D_4 equivariance when downsampling encounters odd intermediate sizes (e.g. use --resize 32 for SRE-Conv on DermaMNIST 28x28).")
     parser.add_argument("--escnn_pool_type", type=str, default="box", choices=["box", "antialiased"], help="Pooling operator for --escnn_pool. 'box' = 2x2 average, stride 2 (same operator as mk.Downsample, preserves D4). 'antialiased' = escnn PointwiseAvgPoolAntialiased, which MEASURED ~1e0 equivariance error at the first pool because it subsamples the even sublattice; kept only to reproduce that finding.")
