@@ -576,7 +576,7 @@ class MatrixMoment(tnn.Module):
 
 
 class MatrixMomentV2(tnn.Module):
-    """MatrixMoment rebuilt from advisor's Net2 template.
+    """MatrixMoment variant with no explicit downsampling.
 
     All layers output scalar+vector+matrix. After global avg pool,
     only scalar channels feed the linear classifier (invariant output).
