@@ -1,5 +1,24 @@
 # Moment Kernels
 
+Code for the paper:
+
+**Moment kernels: a simple and scalable approach for equivariance to rotations and reflections in deep convolutional networks**  
+Siqi Fang, Zachary Schlamowitz, Andrew Bennecke, Daniel J. Tward  
+*Symmetry and Geometry in Neural Representations (NeurReps) 2026*
+
+Moment kernels are convolution kernels written as radial functions times products of position components and Kronecker deltas. They give rotation- and reflection-equivariant CNNs in any dimension, as ordinary convolutions and without representation theory.
+
+## Citation
+
+```bibtex
+@InProceedings{fang26,
+  title    = {Moment Kernels: A Simple and Scalable Approach for Equivariance to Rotations and Reflections in Deep Convolutional Networks},
+  author   = {Fang, Siqi and Schlamowitz, Zachary and Bennecke, Andrew and Tward, Daniel J.},
+  abstract = {Translation equivariance is a central reason convolutional neural networks have been successful in computer vision. Other symmetries, such as rotations and reflections, are similarly important in fields such as biomedical image analysis, but equivariant methods for these symmetries remain less widely adopted, especially in 3D. Existing approaches often rely on group convolutions, harmonic bases, irreducible representations, or specialized libraries, which can obscure the explicit form of admissible kernels for practitioners. We introduce moment kernels, a simple Cartesian parameterization of convolution kernels equivariant to orthogonal transformations, $O(d)$, between tensor-valued feature fields. We prove that every such $O(d)$-equivariant kernel can be represented as a sum of radial functions of $|x|$ multiplied by products of coordinate components $x^i$ and Kronecker deltas. This gives a complete, dimension-agnostic kernel family complementary to harmonic-basis approaches and implementable using standard convolution modules. We implement a discrete version of moment-kernel networks and evaluate on biomedical tasks with different transformation laws: invariant 2D image classification and equivariant 3D affine-transform regression for brain MRI. Across these tasks, moment kernels improve worst-case orientation consistency and remain trainable in 3D, while avoiding the orientation-channel expansion required by group convolutions, which reaches 48 orientations for 90-degree rotations and reflections in 3D. The resulting models provide exact consistency under grid-preserving rotations and reflections, approximate consistency under arbitrary rotations, and remain practical for standard CNN workflows.},
+  software = {https://github.com/SiqiFang/equivariance}
+}
+```
+
 ## Repository structure
 
 ```
