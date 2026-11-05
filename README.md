@@ -19,6 +19,10 @@ Moment kernels are convolution kernels written as radial functions times product
 }
 ```
 
+## License
+
+This code is released under the UCLA TDG Academic Software License (Attribution-NonCommercial-ShareAlike); see [LICENSE](LICENSE). Academic and nonprofit researchers may use, modify, and share it for educational or research purposes under the same terms. Publications that use this code or derivative works must include the acknowledgment given in the license and cite the paper above. Commercial entities should contact software@tdg.ucla.edu.
+
 ## Repository structure
 
 ```
